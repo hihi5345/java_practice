@@ -1,22 +1,25 @@
 package lab2;
 
 public class Account {
-	public String name;
-	private double money;
-	public void credit(double m){
-		money+=m;
+	protected double balance;
+	public Account(double m){
+		balance=m;
 	}
-	public void debit(double m){
-		if(money<m)	System.out.println("Debit amount exceeded account balance.\n");
+	public void credit(double m){
+		balance+=m;
+	}
+	public String debit(double m){
+		if(balance<m)	return "Debit amount exceeded account balance.\n";
 		else{
-			money-=m;
+			balance-=m;
+			return null;
 		}
 	}
-	public void balance(){
-		System.out.printf("%s balance : %.2f\n",name, money);
+	public double getBalance(){
+		return balance;
 	}
-	public Account(String N){
-		name=N;
+	protected void setBalance(double m){
+		balance = m;
 	}
 
 }

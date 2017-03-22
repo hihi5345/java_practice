@@ -4,23 +4,29 @@ public class AccountTest {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		Account account1 = new Account("account1");
-		Account account2 = new Account("account2");
-		account1.credit(50.00);
-		account2.credit(0.00);
-		account1.balance();
-		account2.balance();
-		System.out.print("Enter withdrawal amount for account1 : ");
+		CheckingAccount account1 = new CheckingAccount(100.00);
+		CheckingAccount account2 = new CheckingAccount(100.00);
+		System.out.printf("%s balance : %.2f\n","account1", account1.getBalance());
+		System.out.printf("%s balance : %.2f\n","account2", account2.getBalance());
+		System.out.print("Enter deposit amount for account1 : ");
 	    double num1 = input.nextDouble();
-		account1.debit(num1);
-		account1.balance();
-		account2.balance();
+		account1.credit(num1);
+		System.out.printf("%s balance : %.2f\n","account1", account1.getBalance());
+		System.out.printf("%s balance : %.2f\n","account2", account2.getBalance());
 		System.out.print("Enter withdrawal amount for account2 : ");
 	    double num2 = input.nextDouble();
-		account2.debit(num2);
-		account1.balance();
-		account2.balance();
-
+	    System.out.println("");
+	    if(account2.debit(num2) != null){
+	    	System.err.println(account2.debit(num2));
+	    }
+	    System.out.println("");
+	    System.out.printf("%s balance : %.2f\n","account1", account1.getBalance());
+		System.out.printf("%s balance : %.2f\n","account2", account2.getBalance());
+	    System.out.println("next month!");
+	    account1.nextMonth();
+	    account2.nextMonth();
+	    System.out.printf("%s balance : %.2f\n","account1", account1.getBalance());
+		System.out.printf("%s balance : %.2f\n","account2", account2.getBalance());
 	}
 
 }
