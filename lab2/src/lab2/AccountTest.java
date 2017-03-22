@@ -16,10 +16,7 @@ public class AccountTest {
 		System.out.print("Enter withdrawal amount for account2 : ");
 	    double num2 = input.nextDouble();
 	    System.out.println("");
-	    if(account2.debit(num2) != null){
-	    	System.err.println(account2.debit(num2));
-	    }
-	    System.out.println("");
+	    account2.debit(num2);
 	    System.out.printf("%s balance : %.2f\n","account1", account1.getBalance());
 		System.out.printf("%s balance : %.2f\n","account2", account2.getBalance());
 	    System.out.println("next month!");

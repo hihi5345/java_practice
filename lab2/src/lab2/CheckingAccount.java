@@ -6,7 +6,7 @@ public class CheckingAccount extends Account {
 	private double loan_interest;
 	public CheckingAccount(double m) {
 		super(m);
-		credit_limit=-100;
+		credit_limit=-100.0;
 		interest=0.01;
 		loan_interest=0.07;
 	}
@@ -19,7 +19,7 @@ public class CheckingAccount extends Account {
 		return balance;
 	}
 	@Override public String debit(double m){
-		if(balance-m<credit_limit){
+		if(balance - m < credit_limit){
 			return "no more!!";
 		} else {
 			balance -= m;
