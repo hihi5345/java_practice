@@ -6,7 +6,7 @@ public class CheckingAccount extends Account {
 	private double loan_interest;
 	public CheckingAccount(double m) {
 		super(m);
-		credit_limit=-100.0;
+		credit_limit=-100;
 		interest=0.01;
 		loan_interest=0.07;
 	}
@@ -26,7 +26,7 @@ public class CheckingAccount extends Account {
 			if(balance<0){
 				return "minus!!";
 			}
-			return null;
+			return "";
 		}
 	}
 }
