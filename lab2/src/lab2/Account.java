@@ -1,7 +1,7 @@
 package lab2;
 
 public class Account {
-	protected double balance;
+	private double balance;
 	public Account(double m){
 		balance=m;
 	}
