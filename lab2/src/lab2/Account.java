@@ -1,6 +1,6 @@
 package lab2;
 
-public class Account {
+public abstract class Account {
 	private double balance;
 	public Account(double m){
 		balance=m;
@@ -18,6 +18,8 @@ public class Account {
 	public double getBalance(){
 		return balance;
 	}
+	public abstract double getWithdrawableAccount();
+	public abstract void passTime(int t);
 	protected void setBalance(double m){
 		balance = m;
 	}
