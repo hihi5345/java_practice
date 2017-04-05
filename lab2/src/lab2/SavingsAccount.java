@@ -20,6 +20,10 @@ public class SavingsAccount extends Account implements Valuable {
 		}
 	}
 	@Override
+	public void credit(double m){
+		return;
+	}
+	@Override
 	public double getWithdrawableAccount() {
 		// TODO Auto-generated method stub
 		return getBalance();
