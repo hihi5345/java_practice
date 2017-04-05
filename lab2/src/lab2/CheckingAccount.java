@@ -1,6 +1,6 @@
 package lab2;
 
-public class CheckingAccount extends Account {
+public class CheckingAccount extends Account implements Valuable {
 	private double credit_limit;
 	private double interest;
 	private double loan_interest;
@@ -43,5 +43,15 @@ public class CheckingAccount extends Account {
 	public boolean isBankrupted(){
 		if(getBalance() >= credit_limit)	return true;
 		else	return false;
+	}
+	@Override
+	public double EstimateValue(int month) {
+		// TODO Auto-generated method stub
+		passTime(month);
+		return getBalance();
+	}
+	@Override
+	public String toString(){
+		return String.format("CheckingAccount_Balance:"+getBalance());
 	}
 }

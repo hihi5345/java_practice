@@ -1,6 +1,6 @@
 package lab2;
 
-public class SavingsAccount extends Account {
+public class SavingsAccount extends Account implements Valuable {
 	private double interest;
 	private int month;
 	public SavingsAccount(double m, double in){
@@ -30,5 +30,13 @@ public class SavingsAccount extends Account {
 		month+=t;
 		if(month==12)	setBalance(getBalance()*Math.pow((1+interest),12));
 	}
-
+	@Override
+	public double EstimateValue(int month) {
+		// TODO Auto-generated method stub
+		return getBalance() * Math.pow(1+interest, month);
+	}
+	@Override
+	public String toString(){
+		return String.format("SavingsAccount_Balance:"+getBalance());
+	}
 }
