@@ -31,8 +31,8 @@ public class SavingsAccount extends Account implements Valuable {
 	@Override
 	public void passTime(int t) {
 		// TODO Auto-generated method stub
+		if(month<12 && month+t>=12)	setBalance(getBalance()*Math.pow((1+interest),12));
 		month+=t;
-		if(month==12)	setBalance(getBalance()*Math.pow((1+interest),12));
 	}
 	@Override
 	public double EstimateValue(int month) {
