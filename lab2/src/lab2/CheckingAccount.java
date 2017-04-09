@@ -15,7 +15,7 @@ public class CheckingAccount extends Account implements Valuable {
 			return "no more!!";
 		} else {
 			setBalance(getBalance()-m);
-			if(getBalance()<0){
+			if(getBalance() < 0){
 				return "minus!!";
 			}
 			return "";
