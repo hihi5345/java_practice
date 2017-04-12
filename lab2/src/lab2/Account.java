@@ -8,12 +8,8 @@ public abstract class Account {
 	public void credit(double m){
 		balance+=m;
 	}
-	public String debit(double m){
-		if(balance<m)	return "Debit amount exceeded account balance.\n";
-		else{
-			balance-=m;
-			return null;
-		}
+	public void debit(double m) throws Exception{
+		balance -= m;
 	}
 	public double getBalance(){
 		return balance;

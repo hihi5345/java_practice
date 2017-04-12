@@ -7,16 +7,16 @@ public class SavingsAccount extends Account implements Valuable {
 		super(m);
 		interest = in;
 	}
-	@Override public String debit(double m){
-		if(month<12)	return "아직 출금할 수 없습니다.";
+	@Override public void debit(double m) throws Exception{
+		if(month<12)	throw new Exception("아직 출금할 수 없습니다.");
 		else{
-			if(getBalance()-m < 0)	return "no more!!";
-			setBalance(getBalance()-m);
-			if(getBalance()<0){
-				return "minus!!";
+			if(m<0){
+				throw new Exception("음수입력!");
+			} if(getBalance() - m < 0){
+				throw new Exception("Debit amount exceeded account balance.");
+			}else {
+				setBalance(getBalance()-m);
 			}
-			return "";
-		
 		}
 	}
 	@Override

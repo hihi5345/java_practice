@@ -10,15 +10,13 @@ public class CheckingAccount extends Account implements Valuable {
 		interest=in;
 		loan_interest=loan;
 	}
-	@Override public String debit(double m){
-		if(getBalance() - m < credit_limit){
-			return "no more!!";
-		} else {
+	@Override public void debit(double m) throws Exception{
+		if(m<0){
+			throw new Exception("음수입력!");
+		} if(getBalance() - m < credit_limit){
+			throw new Exception("Debit amount exceeded account balance.");
+		}else {
 			setBalance(getBalance()-m);
-			if(getBalance() < 0){
-				return "minus!!";
-			}
-			return "";
 		}
 	}
 	@Override
