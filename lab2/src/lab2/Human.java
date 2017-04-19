@@ -12,6 +12,9 @@ public class Human implements Valuable{
 		// TODO Auto-generated method stub
 		return Double.POSITIVE_INFINITY;
 	}
+	public double EstimateValue(){
+		return EstimateValue(1);
+	}
 	@Override
 	public String toString(){
 		return String.format("Human name:"+name+"\nregitstered age:"+age);

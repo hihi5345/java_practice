@@ -38,8 +38,11 @@ public class CheckingAccount extends Account implements Valuable {
 			setBalance(getBalance()*Math.pow((1+loan_interest),t));
 		}
 	}
+	public void passTime(){
+		passTime(1);
+	}
 	public boolean isBankrupted(){
-		if(getBalance() >= credit_limit)	return true;
+		if(getBalance() <= credit_limit)	return true;
 		else	return false;
 	}
 	@Override
@@ -47,6 +50,9 @@ public class CheckingAccount extends Account implements Valuable {
 		// TODO Auto-generated method stub
 		passTime(month);
 		return getBalance();
+	}
+	public double EstimateValue(){
+		return EstimateValue(1);
 	}
 	@Override
 	public String toString(){
